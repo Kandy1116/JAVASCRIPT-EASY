@@ -1,9 +1,8 @@
-function arrSum(arr) {
-    let sum = 0;
+function removeApples(arr) {
     for (let i = 0; i < arr.length; ++i) {
-        sum = sum + arr[i];
+        console.log(arr[i])
     }
-    return sum
-}
+    }
 
-console.log(arrSum([1, 2, 2]))
+
+console.log(removeApples(['Banana', 'Orange', 'Apple']))

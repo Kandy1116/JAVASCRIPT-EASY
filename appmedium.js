@@ -131,4 +131,143 @@ function calcTime(seconds) {
     return timerMinutes + ':' + timerSeconds;
 }
 
-console.log(calcTime(66))
+console.log(calcTime(50))
+
+
+// Q7. Find the largest number
+// Given an array of numbers, return the largest number of that array
+
+// getMax([5, 100, 0]) -> 100
+// getMax([12, 10, -20]) -> 12
+// getMax([-300, -100, -200]) -> -100
+
+/*Loop Test* Check console for every element of the array ex: -300, -100, -200*/
+// function getMax(arr) {
+//     for (let i = 0; i < arr.length; ++i)
+//         console.log(arr[i]);
+// }
+// console.log(getMax([-300, -100, -200]))
+function getMax(arr) {
+    let max = arr[0];
+    for (let i = 0; i < arr.length; ++i)
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        return max;
+    }
+    console.log(getMax([-300, -100, -200]))
+
+
+// Q8. Revers a string
+// Given a string, return the reversed string
+/***- Use an incrementing for loop */
+/***- Use a decrementing for loop */
+/***- Use the array reverse property */
+
+// reverseString('abc') -> 'cba'
+// reverseString('David') -> 'divaD'
+// reverseString('This is cool') -> 'looc si sihT'
+
+function reverseString(str) {
+    let reversedString = '';
+    for (let i = 0; i < str.length; ++i) {
+        reversedString = str[i] + reversedString;
+    }
+    return reversedString
+}
+console.log(reverseString('abc'))
+
+
+// Q9. Turn every element in an array into 0
+// Given an array of elements, return the same length array filled with 0's.
+/*** - Solution 1: For loop */
+/*** - Solution 2: Array 'fill' */
+/*** - Solution 3: Array 'map' */
+
+// convertToZeros([5, 100, 0]) -> [0, 0, 0]
+// convertToZeros([12]) -> [0]
+// convertToZeros([1, 2, 3, 4, 5]) -> [0, 0, 0, 0, 0]
+
+function convertToZeros(arr) {
+    for (let i = 0; i < arr.length; ++i) {
+        arr[i] = 0
+    }
+    return arr;
+}
+
+console.log(convertToZeros([1, 2, 3, 4, 5, 6]))
+
+
+// Q10. Filter out all the apples
+// Given an array of fruitd, if it is an apple, remove it from the array.
+/*** - Solution 1: For loop */
+/*** - Solution 2: Array 'filter' */
+
+// removeApples(['Banana', 'Apple', 'Orange', 'Apple']) -> ['Banana', 'Orange']
+// removeApples(['Tomato', 'Orange', 'Banana']) -> ['Tomato', 'Orange', 'Banana']
+// removeApples(['Banana', 'Orange', 'Apple']) -> ['Banana', 'Orange']
+
+// /* For loop .push
+// function removeApples(arr) {
+//     let noApples = []
+//     for (let i =0; i < arr.length; ++i) {
+//         if (arr[i] !== 'Apple') {   
+//             noApples.push(arr[i]);
+//         }
+//     }
+//     return noApples
+//     }
+// console.log(removeApples(['Banana', 'Orange', 'Apple']))
+
+/*** - Solution 1: For loop */
+// function removeApples(arr) {
+//     for (let i =0; i < arr.length; ++i) {
+//         if (arr[i] !== 'Apple')
+//         console.log(arr[i])
+//     }
+//     }
+// console.log(removeApples(['Banana', 'Orange', 'Apple']))
+
+/*** - Solution 2: Array 'filter' */
+function removeApples(arr) {
+    return arr.filter(elem => elem !== 'Apple')
+}
+console.log(removeApples(['Banana', 'Orange', 'Apple']))
+
+
+// Q11. Filter out all the falsy values
+// Given an array of values, filter out al the falsy values and only return the truthy values.
+/*** - Solution 1: For loop */
+/*** - Solution 2: Array 'filter' */
+
+// filterOutFalsy(["", [], 0, null, undefined, "0"]) -> [[], "0"]
+// filterOutFalsy(['Tomato', 'Orange', 'Banana', false]) -> ['Tomato', 'Orange', 'Banana']
+// filterOutFalsy(['Banana', 'Orange', 'Apple']) -> ['Banana', 'Orange']
+
+/*** - Solution 1: For loop */
+// function filterOutFalsy(arr) {
+//     for (let i = 0; i < arr.length; ++i) {
+//         if (!!arr[i] === true) {
+//             truthyArr.push(arr[i])
+//         }
+//     }
+//     return truthyArr
+// }
+// console.log(filterOutFalsy(['', NaN, '500', null, false, 0]))
+
+function filterOutFalsy(arr) {
+    return 
+    }
+console.log(filterOutFalsy(['Banana', 'Orange', 'Apple', NaN, 0]))
+
+
+// Q12. Truthy to true, Falsy to false
+// Given an array of truthy and falsy values, 
+// return the same array of elements into its boolean value.
+
+// convertToBoolean([500, 0, "David", "", []]) -> [true, false, true, false, true]
+
+function convertToBoolean(arr) {
+    return arr.map(elem => !!elem)
+    }
+console.log(convertToBoolean([500, 0, "David", "", []]))
